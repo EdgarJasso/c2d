@@ -1,0 +1,113 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+    integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+    integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous">
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+    integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous">
+</script>
+
+<div class="container">
+    <div id="" class="form-container">
+
+        <h3 class="text-center text-primary">Registro</h3>
+
+        <div class="form-signup">
+
+            <div class="form-group">
+                <input id="c2d_inputCompany_r" class="form-control" type="text" name="c2d_inputCompany_r"
+                    placeholder="Compañia">
+            </div>
+            <div class="form-group">
+                <input id="c2d_inputEmail_r" class="form-control" type="text" name="c2d_inputEmail_r"
+                    placeholder="Correo Electronico">
+            </div>
+            <div class="form-group">
+                <input id="c2d_inputPassword_r" class="form-control" type="text" name="c2d_inputPassword_r"
+                    placeholder="Contraseña">
+            </div>
+            <div class="form-group">
+                <input id="c2d_inputPasswordC_r" class="form-control" type="text" name="c2d_inputPasswordC_r"
+                    placeholder="Confirmar Contraseña">
+            </div>
+
+            <div class="form-check">
+                <input style="margin-top: 50px;" class="form-check-input d-inline" type="checkbox" value="false"
+                    id="c2d_inputPolitica_r">
+                <label class="form-check-label" for="c2d_inputPolitica_r">
+                    Acepto política de privacidad y condiciones de uso
+                </label>
+            </div>
+
+            <center>
+                <button class="btn btn-primary" type="button" id="btn_registro_c2d">Registrarte</button>
+            </center>
+
+            <div id="c2d_error_messange_r" class="text-center"></div>
+
+        </div>
+
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        console.log('hey listo registro');
+        var ApiUrl = 'https://web.chat2desk.com.mx';
+        $("#c2d_inputPolitica_r").on('change', function () {
+            if ($(this).is(':checked')) {
+                $(this).attr('value', 'true');
+            } else {
+                $(this).attr('value', 'false');
+            }
+        });
+        $('#btn_registro_c2d').click(function () {
+            console.log('click en btn registro');
+            $("#c2d_error_messange_r").removeClass("alert alert-danger");
+            $("#c2d_error_messange_r").empty();
+            validar_politica_c2d();
+        });
+        function validar_politica_c2d() {
+            var politica = $('#c2d_inputPolitica_r').val();
+            console.log(politica);
+            if(politica=='false'){
+                console.log('no acepto politicas');
+                $('#c2d_error_messange_r').addClass('alert alert-danger');
+                $('#c2d_error_messange_r').show().html('Para continuar debes aceptar las politicas de privacidad');
+            }else{
+                registro_c2d();
+            }
+        } 
+        function registro_c2d() {
+            var datos = JSON.stringify({
+                email: $('#c2d_inputEmail_r').val(),
+                password: $('#c2d_inputPassword_r').val(),
+                password_confirmation: $('#c2d_inputPasswordC_r').val(),
+                company_name: $('#c2d_inputCompany_r').val()
+            });
+            console.log(datos);
+            $.ajax({
+                method: 'POST',
+                url: ApiUrl + '/api/user/sign_up',
+                contentType: "application/json; charset=UTF-8",
+                dataType: 'json',
+                data: datos,
+                success: function (response) {
+                    if (response.status === 'success') {
+                        location.href = ApiUrl + '?auth_key=' + response.auth_key;
+                        $("#c2d_error_messange_r").addClass("alert alert-success");
+                        $('#c2d_error_messange_r').show().html("success");
+                    } else {
+                        console.error('response', response);
+                        var result = [];
+                        for (var a in response.errors) {
+                            result.push(response.errors[a][0]);
+                        }
+                        $("#c2d_error_messange_r").addClass("alert alert-danger");
+                        $('#c2d_error_messange_r').show().html(result.join('<br />'));
+                    }
+                }
+            });
+        }
+    });
+</script>

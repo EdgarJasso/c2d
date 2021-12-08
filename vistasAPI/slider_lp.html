@@ -1,0 +1,251 @@
+<style>
+    .slideshow {
+        width: 130%;
+        margin-left: -150px;
+        position: relative;
+    }
+
+    .slider li,
+    ul {
+        width: 100%;
+    }
+
+    .slider li {
+        overflow: hidden;
+    }
+
+    .slider li img {
+        width: 100%;
+    }
+
+    .slider .caption {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        padding: 15px 50px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        text-align: center;
+        color: #fff;
+        z-index: 1;
+    }
+
+    .slider .caption h1 {
+        font-size: 50px;
+    }
+
+    .slider .caption p {
+        margin-top: 10px;
+        font-size: 20px;
+    }
+
+    .pagination {
+        position: absolute;
+        top: 102%;
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+    }
+
+    .pagination li {
+        font-size: 20px;
+        margin: 2px 5px;
+        color: #858585;
+        cursor: pointer;
+    }
+
+    .left,
+    .right {
+        position: absolute;
+        top: 0;
+        height: 100%;
+
+        display: flex;
+        align-items: center;
+
+        color: #fff;
+        font-size: 35px;
+        cursor: pointer;
+        z-index: 2;
+    }
+
+    .left {
+        left: 10px;
+    }
+
+    .right {
+        right: 10px;
+    }
+
+
+    @media screen and (max-width: 600px) {
+        .slideshow {
+            width: 100%;
+            margin-left: -50px;
+            position: relative;
+        }
+
+        .slider .caption p {
+            display: none;
+        }
+
+        .slider .caption h1 {
+            font-size: 35px;
+        }
+
+        .left,
+        .right {
+            font-size: 30px;
+        }
+
+        .slider li img {
+            width: 600px;
+        }
+
+        .pagination {
+            display: none;
+        }
+    }
+</style>
+<div class="slideshow">
+    <ul class="slider">
+        <li>
+            <img src="https://chat2desk.mx:8081/wp-content/uploads/2021/05/slide01.png" alt="">
+            <section class="caption">
+                <h1>Lorem ipsum 1</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci quis ipsa, id quidem quisquam
+                    unde.</p>
+            </section>
+        </li>
+        <li>
+            <img src="https://chat2desk.mx:8081/wp-content/uploads/2021/05/slide02.png" alt="">
+            <section class="caption">
+                <h1>Lorem ipsum 2</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci quis ipsa, id quidem quisquam
+                    unde.</p>
+            </section>
+        </li>
+        <li>
+            <img src="https://chat2desk.mx:8081/wp-content/uploads/2021/05/slide03.png" alt="">
+            <section class="caption">
+                <h1>Lorem ipsum 3</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci quis ipsa, id quidem quisquam
+                    unde.</p>
+            </section>
+        </li>
+        <li>
+            <img src="https://chat2desk.mx:8081/wp-content/uploads/2021/05/slide04.png" alt="">
+            <section class="caption">
+                <h1>Lorem ipsum 4</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci quis ipsa, id quidem quisquam
+                    unde.</p>
+            </section>
+        </li>
+    </ul>
+
+    <ol class="pagination">
+
+    </ol>
+
+    <div class="left">
+        <span class="fa fa-chevron-left"></span>
+    </div>
+
+    <div class="right">
+        <span class="fa fa-chevron-right"></span>
+    </div>
+
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var imgItems = $('.slider li').length; // Numero de Slides
+        var imgPos = 1;
+
+        // Agregando paginacion --
+        for (i = 1; i <= imgItems; i++) {
+            $('.pagination').append('<li><span class="fa fa-circle"></span></li>');
+        }
+        //------------------------
+
+        $('.slider li').hide(); // Ocultanos todos los slides
+        $('.slider li:first').show(); // Mostramos el primer slide
+        $('.pagination li:first').css({
+            'color': '#283cfa'
+        }); // Damos estilos al primer item de la paginacion
+
+        // Ejecutamos todas las funciones
+        $('.pagination li').click(pagination);
+        $('.right span').click(nextSlider);
+        $('.left span').click(prevSlider);
+
+
+        setInterval(function () {
+            nextSlider();
+        }, 4000);
+
+        // FUNCIONES =========================================================
+
+        function pagination() {
+            var paginationPos = $(this).index() + 1; // Posicion de la paginacion seleccionada
+
+            $('.slider li').hide(); // Ocultamos todos los slides
+            $('.slider li:nth-child(' + paginationPos + ')').fadeIn(); // Mostramos el Slide seleccionado
+
+            // Dandole estilos a la paginacion seleccionada
+            $('.pagination li').css({
+                'color': '#858585'
+            });
+            $(this).css({
+                'color': '#283cfa'
+            });
+
+            imgPos = paginationPos;
+
+        }
+
+        function nextSlider() {
+            if (imgPos >= imgItems) {
+                imgPos = 1;
+            } else {
+                imgPos++;
+            }
+
+            $('.pagination li').css({
+                'color': '#858585'
+            });
+            $('.pagination li:nth-child(' + imgPos + ')').css({
+                'color': '#283cfa'
+            });
+
+            $('.slider li').hide(); // Ocultamos todos los slides
+            $('.slider li:nth-child(' + imgPos + ')').fadeIn(); // Mostramos el Slide seleccionado
+
+        }
+
+        function prevSlider() {
+            if (imgPos <= 1) {
+                imgPos = imgItems;
+            } else {
+                imgPos--;
+            }
+
+            $('.pagination li').css({
+                'color': '#858585'
+            });
+            $('.pagination li:nth-child(' + imgPos + ')').css({
+                'color': '#283cfa'
+            });
+
+            $('.slider li').hide(); // Ocultamos todos los slides
+            $('.slider li:nth-child(' + imgPos + ')').fadeIn(); // Mostramos el Slide seleccionado
+        }
+
+    });
+</script>

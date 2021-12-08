@@ -1,0 +1,108 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+<div class="container">
+    <div id="" class="form-container">
+        <h3 class="text-center text-primary">Contactanos</h3>
+        <div class="form-signup">
+            <center>
+                <div class="row col-sm-8">
+                    <div class="col-sm-4">
+                        <a href="https://t.me/chat2deskbot" target="_blank" class="icon-red-bot">
+                            <i class="fab fa-telegram icon-telegram"></i>
+                        </a>
+                    </div>
+                    <div class="col-sm-4">
+                        <a href="https://wa.me/79119671216" target="_blank" class="icon-red-bot">
+                            <i class="fab fa-whatsapp icon-whatsapp"></i>
+                        </a>
+                    </div>
+                    <div class="col-sm-4">
+                        <a href="https://m.me/307846476271955" target="_blank" class="icon-red-bot">
+                            <i class="fab fa-facebook icon-facebook"></i>
+                        </a>
+                    </div>
+                </div>
+            </center>
+            <div class="form-group">
+                <input id="c2d_inputCompany_co" class="form-control" type="text" name="c2d_inputCompany_co"
+                    placeholder="Compañia">
+            </div>
+            <div class="form-group">
+                <input id="c2d_inputNombre_co" class="form-control" type="text" name="c2d_inputNombre_co"
+                    placeholder="Nombre Completo">
+            </div>
+            <div class="form-group">
+                <input id="c2d_inputEmail_co" class="form-control" type="text" name="c2d_inputEmail_co"
+                    placeholder="Correo Electronico">
+            </div>
+            <div class="form-check">
+                <input style="margin-top: 50px;" class="form-check-input d-inline" type="checkbox" value="false"
+                    id="c2d_inputPolitica_co">
+                <label class="form-check-label" for="c2d_inputPolitica_co">
+                    Doy mi consentimiento para el <b>procesamiento de mis datos personales</b> y acepto los <b>terminos
+                        de la oferta</b>.
+                </label>
+            </div>
+            <center>
+                <button class="btn btn-primary" type="button" id="btn_contacto_c2d">Enviar Mensaje</button>
+            </center>
+            <div id="c2d_error_messange_c" class="text-center"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        console.log('hey listo contacto');
+        var Url = 'https://chat2desk.mx:8081/';
+        $("#c2d_inputPolitica_co").on('change', function () {
+            if ($(this).is(':checked')) {
+                $(this).attr('value', 'true');
+            } else {
+                $(this).attr('value', 'false');
+            }
+        });
+        $('#btn_contacto_c2d').click(function () {
+            console.log('click en btn_contacto_c2d');
+            $("#c2d_error_messange_c").removeClass("alert alert-danger");
+            $("#c2d_error_messange_c").empty();
+            validar_politica_c2d();
+        });
+        function validar_politica_c2d() {
+            var politica = $('#c2d_inputPolitica_co').val();
+            console.log(politica);
+            if (politica == 'false') {
+                console.log('no acepto politicas');
+                $('#c2d_error_messange_c').addClass('alert alert-danger');
+                $('#c2d_error_messange_c').show().html(
+                    'Para continuar debes aceptar las politicas de privacidad');
+            } else {
+                sendcorreo_c2d();
+            }
+        }
+        function sendcorreo_c2d() {
+            var company = $('#c2d_inputCompany_co').val();
+            var nombre =  $('#c2d_inputNombre_co').val();
+            var email = $('#c2d_inputEmail_co').val();
+            var datos = 'compania='+company +'&nombre_completo=' + nombre + '&correo_cliente='+email;
+            console.log(datos);
+            $.ajax({
+                method: 'POST',
+                url: Url + 'wp-content/themes/datatech/send_contacto.php',
+                contentType: "application/json; charset=UTF-8",
+                data: datos,
+                success: function (response) {
+                    if (response === 'se envio correo') {
+                        $("#c2d_error_messange_c").addClass("alert alert-success");
+                        $('#c2d_error_messange_c').show().html("success");
+                    } else {
+                        console.error('response', response);
+                        $("#c2d_error_messange_c").addClass("alert alert-danger");
+                        $('#c2d_error_messange_c').show().html(response);
+                    }
+                }
+            });
+        }
+    });
+</script>

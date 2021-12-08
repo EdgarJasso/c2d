@@ -1,0 +1,308 @@
+* {
+    font-family: Nunito !important;
+}
+
+a:hover {
+    text-decoration: none !important;
+}
+
+a:hover i {
+    background: #20639b !important;
+    color: #fff !important;
+    transition: all 0.5s !important;
+    border: 1px solid #20639b !important;
+}
+
+.button {
+    background: #20639b !important;
+}
+
+li {
+    list-style: none !important;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+}
+
+.datatech-header-top {
+    padding: 10px 0;
+    background: #20639b !important;
+}
+
+.logged-in .transprent-menu .datatech_nav_area.prefix {
+    background-color: #fff !important;
+}
+
+#menu-main-menu>.menu-item>a {
+    color: #494949;
+}
+
+a.dtbtn {
+    border: 2px solid #20639b !important;
+    text-align: center !important;
+    text-transform: capitalize !important;
+    font-weight: 600 !important;
+}
+
+.em-service.service-style-two .em-service-icon {
+    background: #20639b !important;
+}
+
+.em-service.service-style-two:before {
+    background: #20639b !important;
+}
+
+body.kc-css-system .kc-css-596532 .em_work_progress_icon i {
+    background-color: #20639b;
+}
+
+.style-two .em_work_progress_icon i {
+    background: linear-gradient(-60deg, #8FACD9 0%, #20639b 100%);
+}
+
+.style-two .em_work_progress-number span {
+    background: #20639b !important;
+}
+
+#scrollUp,
+#scrollUp:hover {
+    background: #20639b !important;
+}
+
+.em-feature.style-three .em_feature-icon i {
+    color: #20639b;
+}
+
+.em-feature.style-three:hover {
+    background: #20639b;
+}
+
+.em-feature.style-three:hover .em_feature-icon i {
+    color: #20639b;
+}
+
+.hero-slider-btn a {
+    background: #20639b !important;
+}
+
+.hero-slider-btn a:hover {
+    border-radius: 2px solid #20639b !important;
+    color: #20639b !important;
+    background: #fff !important;
+}
+
+.datatech_nav_area.prefix .datatech_menu>ul>li>a {
+    color: #20639b !important;
+    text-decoration: none;
+}
+
+.datatech_nav_area.prefix .datatech_menu>ul>li:hover>a {
+    color: #20639b !important;
+    text-decoration: none;
+}
+
+.transprent-menu .datatech_menu>ul>li a {
+    color: #494949;
+}
+
+.footer-middle {
+    z-index: -1 !important;
+}
+
+#epkb-main-page-container.epkb-basic-template #epkb-content-container section {
+    display: inline-block !important;
+    float: left !important;
+    margin-top: 0px !important;
+}
+
+p br {
+    display: none !important;
+}
+
+#epkb-main-page-container.epkb-basic-template .epkb-main-category li {
+    padding-left: 10px !important;
+    margin-bottom: 0px !important;
+    padding-bottom: 0px !important;
+    padding-top: 0px !important;
+}
+
+#epkb-main-page-container.epkb-basic-template .eckb-article-title .eckb-article-title__text {
+    margin-top: -25px !important;
+}
+
+.eckb-article-title__icon {
+    color: #20639b !important;
+}
+
+.eckb-navigation-button {
+    background-color: #fff !important;
+}
+
+.epkb-doc-search-container {
+    background-color: #20639b !important;
+    margin-top: 150px !important;
+}
+
+.transprent-menu .datatech_menu>ul>li a {
+    color: #666 !important;
+}
+
+.datatech_nav_area.prefix .datatech_menu>ul>li>a {
+    color: #616161 !important;
+}
+
+.um .um-button.um-alt,
+.um input[type=submit].um-button.um-alt {
+    color: #666666;
+    display: none;
+}
+
+.datatech_menu>ul>li>a {
+    font-size: 15px;
+}
+
+@media (max-width: 1204px) {
+    .datatech_menu>ul>li>a {
+        font-size: 12px;
+    }
+
+    .top-address p a,
+    .top-right-menu ul.social-icons li a,
+    .top-address p span {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .datatech_menu>ul>li>a {
+        font-size: 10px;
+    }
+
+    .top-address p a,
+    .top-right-menu ul.social-icons li a,
+    .top-address p span {
+        font-size: 10px;
+    }
+}
+
+#scrollUp {
+    left: 30px !important;
+}
+
+/*carousel*/
+.c2d_carousel {
+    opacity: 0.9;
+}
+
+.c2d_carousel:hover {
+    opacity: 1.0;
+}
+
+/*carousel*/
+
+
+.c2d_img {
+    margin-top: -90px;
+    width: 150% !important;
+    max-width: 150% !important;
+}
+
+.datatech_menu>ul>li:hover>a,
+.datatech_menu>ul>li.current>a {
+    color: #20639b;
+    text-decoration: none;
+}
+
+.datatech_menu.main-search-menu>ul,
+.em-quearys-top.msin-menu-search {
+    display: inline-block;
+    width: auto !important;
+}
+
+a.dtbtn:hover {
+    text-decoration: none;
+}
+
+.icon-red-bot {
+    font-size: 40px;
+}
+
+body.kc-css-system .kc-css-337471 .kc_button {
+    color: #ffffff;
+    background-color: #20639b;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 3px 3px 3px 3px;
+}
+
+.icon-telegram {
+    color: #0088cc;
+}
+
+.icon-whatsapp {
+    color: #00bb2d;
+}
+
+.icon-facebook {
+    color: #3b5998;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+    font-family: 'Nunito' !important;
+}
+
+.em-service.service-style-seven .em-service-icon:before {
+    background: #20639b !important;
+}
+
+.c2d_gif_hd,
+.zoom_hp {
+    width: 100% !important;
+    height: auto !important;
+}
+
+.footer_icon {
+    font-size: 18px;
+    padding: 10px;
+    border: 2px solid #20639b;
+    text-align: center;
+    align-items: center;
+    background: #20639b;
+    color: #fff;
+    margin: 0px 5px;
+    border-radius: 10px;
+}
+
+@media(max-width: 767px) {
+    .footer-apps__btn img {
+        max-width: 220px !important;
+    }
+}
+
+.em-team.style-two:before {
+    background: rgb(32 99 155 / 85%) !important;
+}
+
+.style-two .pricing_top_bar {
+    background: #20639b;
+}
+
+.style-two .order_now a,
+style-two .order_now a:hover {
+    border: 1px solid #20639b;
+    text-decoration: none;
+}
+
+.datatech_nav_area.prefix .datatech_menu>ul>li>a {
+    color: #000 !important;
+}

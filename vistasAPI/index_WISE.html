@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="jumbotron text-center">
+            <h1>Bienvenido</h1>
+            <p>da click en el widget para iniciar la conversacion</p>
+        </div>
+        <img src="flecha.png" class="img-responsive rounded" alt="flecha" style="width: 70% !important">
+    </div>
+
+    <!-- WIDGET IQUOS -->
+    <script src="https://livechat-v2.chat2desk.com.mx/packs/ie-11-support.js"></script>
+
+    <script>
+        window.chat24_token = "41cc8c576064d9a32047dbfbd0ced016";
+        window.chat24_url = "https://livechat-v2.chat2desk.com.mx";
+        window.chat24_socket_url = "wss://livechat-v2.chat2desk.com.mx/widget_ws_new";
+        window.chat24_show_new_wysiwyg = "true";
+        window.chat24_static_files_domain = "https://storage.chat2desk.com.mx/";
+        window.lang = "es";
+        window.fetch("".concat(window.chat24_url, "/packs/manifest.json?nocache=").concat(new Date().getTime())).then(
+            function (res) {
+                return res.json();
+            }).then(function (data) {
+            var chat24 = document.createElement("script");
+            chat24.type = "text/javascript";
+            chat24.async = true;
+            chat24.src = "".concat(window.chat24_url).concat(data["application.js"]);
+            document.body.appendChild(chat24);
+        });
+    </script>
+    <!-- WIDGET IQUOS -->
+
+</body>
+
+</html>

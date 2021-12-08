@@ -1,0 +1,126 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+    integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+    integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous">
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+    integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous">
+</script>
+
+<div class="container">
+    <form id="login-form" class="form-container">
+        <div class="form-signin" id="form_singin">
+            <h3 class="text-center text-primary">Inicio de Sesion</h3>
+            <div class="form-group">
+                <input id="c2d_inputEmail" class="form-control" type="text" name="c2d_inputEmail"
+                    placeholder="Correo Electronico">
+            </div>
+            <div class="form-group">
+                <input id="c2d_inputPassword" class="form-control" type="password" name="c2d_inputPassword"
+                    placeholder="Contraseña">
+            </div>
+
+            <center>
+                <button class="btn btn-primary" type="button" id="btn_login_c2d">Ingresar</button>
+            </center>
+
+            <div id="c2d_error_messange" class="text-center"></div>
+
+        </div>
+        <center>
+            <button class="text-center btn btn-info" id="btn_reset_c2d" type="button">¿Olvidaste tu contraseña?</button>
+        </center>
+        <div class="form-container d-none" id="forgot_password">
+            <div class="form-group">
+                <input id="c2d_inputEmail_rp" class="form-control" type="text" name="c2d_inputEmail_rp"
+                    placeholder="Correo Electronico">
+            </div>
+            <center>
+                <button class="btn btn-primary" type="button" id="btn_rp_c2d">Enviar Correo</button>
+            </center>
+            <div id="c2d_error_messange_rp" class="text-center"></div>
+        </div>
+    </form>
+</div>
+
+<script>
+    $(document).ready(function () {
+        var ApiUrl = 'https://web.chat2desk.com.mx';
+        var HostUrl = 'https://chat2desk.mx';
+        $('#login-form').submit(function (e) {
+            console.log("enter");
+            e.preventDefault();
+            login();
+        });
+        $("#btn_login_c2d").click(login);
+        function login(){
+            $("#c2d_error_messange").removeClass("alert alert-danger");
+            $("#c2d_error_messange").empty();
+            $.ajax({
+                method: 'POST',
+                url: ApiUrl + '/api/user/sign_in',
+                contentType: "application/json; charset=UTF-8",
+                dataType: 'json',
+                data: JSON.stringify({
+                    email: $('#c2d_inputEmail').val(),
+                    password: $('#c2d_inputPassword').val()
+                }),
+                success: function (response) {
+                    if (response.status === 'success') {
+                        location.href = ApiUrl + '?auth_key=' + response.auth_key;
+                        $("#c2d_error_messange").addClass("alert alert-success");
+                        $('#c2d_error_messange').show().html("success");
+                    } else {
+                        console.error('response', response);
+                        var result = [];
+                        for (var a in response.errors) {
+                            result.push(response.errors[a][0]);
+                        }
+                        $("#c2d_error_messange").addClass("alert alert-danger");
+                        $('#c2d_error_messange').show().html(result.join('<br/>'));
+                    }
+                }
+            });
+        }
+        $("#btn_reset_c2d").click(function () {
+            $('#forgot_password').removeClass('d-none');
+            $('#btn_reset_c2d').addClass('d-none');
+            $('#form_singin').addClass('d-none');
+            console.log('click en olvide contraseña');
+        });
+        $("#btn_rp_c2d").click(function () {
+            console.log('click envio de correo');
+            $.ajax({
+                method: 'POST',
+                url: ApiUrl + '/api/user/reset_password',
+                contentType: "application/json; charset=UTF-8",
+                dataType: 'json',
+                data: JSON.stringify({
+                    email: $('#c2d_inputEmail_rp').val(),
+                    url_to_change_pwd: HostUrl
+                }),
+                success: function (response) {
+                    if (response.status === 'success') {
+                        $("#c2d_error_messange_rp").removeClass("alert alert-danger");
+                        $("#c2d_error_messange_rp").addClass("alert alert-success");
+                        $('#c2d_error_messange_rp').show().html("correo enviado a:" +response.email);
+                        setTimeout(function () {
+                            $('#forgot_password').addClass('d-none');
+                            $('#btn_reset_c2d').removeClass('d-none');
+                            $('#form_singin').removeClass('d-none');
+                        },5000);
+                    } else {
+                        console.log(response.errors.email);
+                        console.error('response', response);
+                        var result = [];
+                        for (var a in response.errors) {
+                            result.push(response.errors[a][0]);
+                        }
+                        $("#c2d_error_messange_rp").addClass("alert alert-danger");
+                        $('#c2d_error_messange_rp').show().html(result.join('<br/>'));
+                    }
+                }
+            });
+        });
+    });
+</script>

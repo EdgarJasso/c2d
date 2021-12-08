@@ -1,0 +1,27 @@
+<script>
+    $(document).ready(function () {
+        $(".demo-sign-in").click(function (e) {
+            console.log('hey listo demo');
+            var ApiUrl = 'https://web.chat2desk.com.mx';
+            e.preventDefault(), $.ajax({
+                method: "POST",
+                url: ApiUrl + "/api/user/sign_up",
+                contentType: "application/json; charset=UTF-8",
+                dataType: "json",
+                data: JSON.stringify({
+                    demo_access: !0
+                }),
+                success: function (e) {
+                    "success" === e.status ? window.open( ApiUrl + "?auth_key=" + e.auth_key, "_blank") : console.error("response", e)
+                }
+            })
+        })
+    });
+</script>
+<style>
+    @media(max-width: 767px){
+        .footer-apps__btn img{
+            max-width: 220px !important;
+        }
+    }
+</style>
