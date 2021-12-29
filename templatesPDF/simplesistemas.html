@@ -5,8 +5,43 @@
 </head>
 
 <body>
-    <style>
+    <style type="text/css">
+        /* Estilos para la portada del documento */
+
+        .portada {
+            background-color: rgb(1, 54, 153);
+            color: #FFFFFF;
+            width: 842px;
+            height: 1500px;
+        }
+
         .centrar {
+            background-color: #fafafa;
+            margin: 1rem;
+            padding: 1rem;
+            border: 2px solid #ccc;
+            /* IMPORTANTE */
+            text-align: center;
+        }
+
+        .derecha {
+            float: right;
+
+        }
+
+        .izquierda {
+            float: left;
+
+        }
+
+        .Titulop {
+            font-weight: bold;
+
+        }
+
+        /* Estilos para la portada del documento */
+        /* Estilos para la cuerpo del documento */
+        .centrar_t {
             text-align: center;
         }
 
@@ -15,13 +50,16 @@
         }
 
         .titular {
-            color: blue;
+            color:rgb(111, 148, 218);
+            text-transform: uppercase;
+            border-bottom: 2px solid rgb(111, 148, 218);;
         }
 
         .subtitulo {
             color: gray;
         }
 
+        /* estilos parra bullet lista*/
         .bullet_red li::before {
             content: "\2022";
             color: red;
@@ -30,6 +68,7 @@
             width: 1em;
             margin-left: -1em;
         }
+
         .bullet_black li::before {
             content: "\2022";
             color: black;
@@ -38,211 +77,633 @@
             width: 1em;
             margin-left: -1em;
         }
+        
+        /* estilos parra bullet lista*/
+        .cuerpo {
+            padding: 2cm;
+        }
+
+        /*estilos para tabla diferencias*/
+        #t_diferencias {
+            border: 1px solid cornflowerblue;
+        }
+
+        #t_diferencias thead {
+            background-color: cornflowerblue;
+            text-align: center;
+            font-weight: bold;
+            color: cornsilk;
+        }
+
+        #t_diferencias thead tr td,
+        #t_diferencias tbody tr td {
+            padding: 5px;
+        }
+
+        #t_diferencias tbody tr:nth-child(odd) td {
+            background-color: rgb(150, 180, 237);
+        }
+
+        #t_diferencias tbody tr:nth-child(even) td {
+            background-color: rgb(159, 181, 221);
+        }
+
+        #t_diferencias tbody tr td:nth-child(1) {
+            font-weight: bold;
+        }
+
+        #t_diferencias tbody tr td:nth-child(2),
+        #t_diferencias tbody tr td:nth-child(3),
+        #t_diferencias tbody tr td:nth-child(4) {
+            text-align: center;
+        }
+
+        /*estilos para tabla diferencias*/
+        /*estilos para contenido en colemnas*/
+        .row {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            flex-basis: 100%;
+            flex: 1;
+        }
+
+        /*estilos para contenido en colemnas*/
+
+        /* Estilos para la cuerpo del documento */
     </style>
+    <div class="portada">
+        <div>
+            <center><img alt="Coretek" src="https://coretek.mx/wp-content/uploads/2020/01/coretek_222.png" /></center>
+        </div>
 
-    <div id="saludo">
-        <p>Estimado Ruben Estrada</p>
+        <div class="izquierda">
+            <h2 class="Titulop"><br />
+                <br />
+                &nbsp;</h2>
 
-        <p>Simple Sistemas</p>
+            <h1 class="Titulop">&nbsp; &nbsp; &nbsp; &nbsp;<br />
+                <br />
+                &nbsp; &nbsp; &nbsp; <span dir="rtl">Propuesta&nbsp;E-Commerce</span><br />
+                <big><span dir="rtl">&nbsp;</span></big></h1>
 
-        <p>Ante todo, un afectuoso saludo y un agradecimiento por el inter&eacute;s mostrado en nuestros servicios.</p>
+            <h2>&nbsp; &nbsp; &nbsp; &nbsp;<br />
+                <br />
+                <br />
+                &nbsp; &nbsp; &nbsp; &nbsp; <big><span style="color:#0000ff;"><span
+                            style="background-color:#2ecc71;">Diciembre</span></span></big></h2>
 
-        <p>En <span class="negrita">CHAT2DESK</span> trabajamos en conjunto con su empresa para entender sus objetivos
-            comerciales y transmitir adecuadamente la imagen de su compa&ntilde;&iacute;a.</p>
-
-        <p>Con este prop&oacute;sito, anexamos la siguiente propuesta econ&oacute;mica, estando seguros de que
-            encontrar&aacute; la soluci&oacute;n sus requerimientos actuales y futuros.</p>
-
-        <p>Logrando as&iacute;, una relaci&oacute;n de grandes beneficios para ambas compa&ntilde;&iacute;as.</p>
-
-        <p>Confirmando nuestro inter&eacute;s en colaborar con ustedes y establecer una relaci&oacute;n de negocio de
-            largo plazo, quedo al aguardo de sus apreciables comentarios.</p>
-
-        <p></p>
-
-        <p class="centrar">Atentamente,</p>
-
-        <p class="centrar negrita">Ing. Mario Alberto Cuautle Chiw</p>
-
-        <p class="centrar">Director Comercial</p>
-
-        <p class="centrar">+ 52 (55) 12041588</p>
+            <h2><big>&nbsp; &nbsp; &nbsp; &nbsp;2021</big></h2>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            &nbsp;
+            <h2><big>&nbsp; &nbsp; &nbsp; &nbsp; www.coretek.mx</big></h2>
+        </div>
     </div>
-    <div id="Chat2desk">
-        <h2 class="titular">Chat2desk</h2>
-        <h3 class="subtitulo">Que es Chat2desk OnCloud</h3>
-        <p>n una plataforma que te permitirá una efectiva comunicación Business-to-Client. Ya que es centro unificado de
-            mensajerías instantáneas que permitirá atender a tus clientes por medio de diferentes canales de mensajería
-            instantánea</p>
-        <p>Dicha comunicación es a través de una consola central. Lo que te permitirá controlar, auditar y unificar tus
-            procesos de servicio al cliente y ventas.</p>
-        <p>Tendrás un verdadero Chat Center donde atenderás a tus clientes mediante ya sea mediante menús de
-            autoservicio, chatbots, una inteligencia artificial y si lo sean podrán ser atendidos directamente por un
-            Operador. Chat2desk tiene la capacidad de conectarte a aplicaciones externas para aumentar el nivel de
-            atención.</p>
-        <p>Contamos con presencia a nivel mundial y tenemos más de 500 clientes en todo el mundo. Nuestra solución se
-            ofrece en forma de una subscripción mensual en modalidad SaaS. En promedio, estamos procesando 700 000
-            mensajes de más de 50 000 usuarios diariamente</p>
+    <div class="cuerpo">
+        <div id="saludo">
+            <p>Estimado Ruben Estrada</p>
 
-        <h3 class="subtitulo">Canales Soportados</h3>
-        <p>Actualmente Chat2desk soporta los siguientes canales de mensajería instantánea</p>
-        <ul class="bullet_red">
+            <p>Simple Sistemas</p>
+
+            <p>Ante todo, un afectuoso saludo y un agradecimiento por el inter&eacute;s mostrado en nuestros servicios.
+            </p>
+
+            <p>En <span class="negrita">CHAT2DESK</span> trabajamos en conjunto con su empresa para entender sus
+                objetivos comerciales y transmitir adecuadamente la imagen de su compa&ntilde;&iacute;a.</p>
+
+            <p>Con este prop&oacute;sito, anexamos la siguiente propuesta econ&oacute;mica, estando seguros de que
+                encontrar&aacute; la soluci&oacute;n sus requerimientos actuales y futuros.</p>
+
+            <p>Logrando as&iacute;, una relaci&oacute;n de grandes beneficios para ambas compa&ntilde;&iacute;as.</p>
+
+            <p>Confirmando nuestro inter&eacute;s en colaborar con ustedes y establecer una relaci&oacute;n de negocio
+                de largo plazo, quedo al aguardo de sus apreciables comentarios.</p>
+
+            <p></p>
+
+            <p class="centrar_t">Atentamente,</p>
+
+            <p class="centrar_t negrita">Ing. Mario Alberto Cuautle Chiw</p>
+
+            <p class="centrar_t">Director Comercial</p>
+
+            <p class="centrar_t">+ 52 (55) 12041588</p>
+        </div>
+
+        <div id="Chat2desk">
+            <h2 class="titular">Chat2desk</h2>
+
+            <h3 class="subtitulo">Que es Chat2desk OnCloud</h3>
+
+            <p>n una plataforma que te permitir&aacute; una efectiva comunicaci&oacute;n Business-to-Client. Ya que es
+                centro unificado de mensajer&iacute;as instant&aacute;neas que permitir&aacute; atender a tus clientes
+                por medio de diferentes canales de mensajer&iacute;a instant&aacute;nea</p>
+
+            <p>Dicha comunicaci&oacute;n es a trav&eacute;s de una consola central. Lo que te permitir&aacute;
+                controlar, auditar y unificar tus procesos de servicio al cliente y ventas.</p>
+
+            <p>Tendr&aacute;s un verdadero Chat Center donde atender&aacute;s a tus clientes mediante ya sea mediante
+                men&uacute;s de autoservicio, chatbots, una inteligencia artificial y si lo sean podr&aacute;n ser
+                atendidos directamente por un Operador. Chat2desk tiene la capacidad de conectarte a aplicaciones
+                externas para aumentar el nivel de atenci&oacute;n.</p>
+
+            <p>Contamos con presencia a nivel mundial y tenemos m&aacute;s de 500 clientes en todo el mundo. Nuestra
+                soluci&oacute;n se ofrece en forma de una subscripci&oacute;n mensual en modalidad SaaS. En promedio,
+                estamos procesando 700 000 mensajes de m&aacute;s de 50 000 usuarios diariamente</p>
+
+            <h3 class="subtitulo">Canales Soportados</h3>
+
+            <p>Actualmente Chat2desk soporta los siguientes canales de mensajer&iacute;a instant&aacute;nea</p>
             <img alt="404" src="https://chat2desk.mx/wp-content/uploads/2021/10/404-error-not-found-1.png"
                 style="float: right; width: 460px; height: 400px; padding-right: 100px; margin-top: -100px;" />
-            <li>Whatsapp Business API</li>
-            <li>Facebook Messenger </li>
-            <li>Telegram </li>
-            <li>Viber </li>
-            <li>Instagram Comments </li>
-            <li>Instagram Direct Message </li>
-            <li>Skype </li>
-            <li>Twitter DM </li>
-            <li>WeChat </li>
-            <li>E-mail </li>
-            <li>Chat Online </li>
-            <li>SMS </li>
-            <li>Eline </li>
-            <li>Canales de Comunicación Personalizado </li>
-        </ul>
-
-        <h3 class="subtitulo">Mensajerías Instantáneas de Pago</h3>
-        <p>Hay ciertos canales de mensajería instantánea que tiene un costo por transaccionabilidad de mensajes, cada
-            mensajería maneja diferentes modelos comerciales ya sea por mensajes intercambiados, contactos o sesiones,
-            estos canales son WhatsApp Business API, Viber Business, Skype y SMS</p>
-        <center>
-            <img alt="404" src="https://chat2desk.mx/wp-content/uploads/2021/10/404-error-not-found-1.png"
-                style="width: 460px; height: 400px;" />
-        </center>
-
-        <h3 class="subtitulo">Características de Chat2desk</h3>
-        <center>
-            <img alt="404" src="https://chat2desk.mx/wp-content/uploads/2021/10/404-error-not-found-1.png"
-                style="width: 460px; height: 400px;" />
-        </center>
-
-        <h3 class="subtitulo">Funcionalidades Chat2desk</h3>
-        <ul class="bullet_red">
-            <li>Hasta 500 agentes para comunicaciones simultáneas con clientes.</li>
-            <li>Aplicación móvil para agentes y administrador.</li>
-            <li>Consola Central Web como interface de atención para Operador y Supervisor</li>
-            <li>Compatible con los principales Browsers (Chrome, Firefox, Edge, Opera, etc)</li>
-            <li>Definición de horarios de operación de Chat center</li>
-            <li>Modos de Operación del Chat Center</li>
-            <li>Auto-respuestas como mensajes de bienvenida a clientes nuevos y clientes recurrentes con base a los
-                horarios de operación.Auto-respuestas como mensajes de bienvenida a clientes nuevos y clientes
-                recurrentes con base a los horarios de operación.</li>
-            <li>Manejo de variables para identificar el nombre del cliente y el saludo</li>
-            <li>Notificaciones en Consola Web</li>
-            <ul class="bullet_black">
-                <li>De Audio, cuando un cliente nuevo te contacta, o recibes un mensaje o recibes una transferencia de
-                    un chat</li>
-                <li>Marquesina de texto en el título de la venta del browser</li>
-                <li>En barra de tareas.</li>
+            <ul class="bullet_red">
+                <li>Whatsapp Business API</li>
+                <li>Facebook Messenger</li>
+                <li>Telegram</li>
+                <li>Viber</li>
+                <li>Instagram Comments</li>
+                <li>Instagram Direct Message</li>
+                <li>Skype</li>
+                <li>Twitter DM</li>
+                <li>WeChat</li>
+                <li>E-mail</li>
+                <li>Chat Online</li>
+                <li>SMS</li>
+                <li>Eline</li>
+                <li>Canales de Comunicaci&oacute;n Personalizado</li>
             </ul>
-            <li>Transferencia de Chats a operadores o grupo de operadores.</li>
-            <li>Broadcasting a grupo de telegram para tener acceso de monitoreo a los mensajes que procesa tu cuenta
-            </li>
-            <li>Estatus de Operadores</li>
-            <li>Asignación automática de chats a los operadores en línea</li>
-            <li>Notificaciones de tiempo de respuesta elevado</li>
-            <li>Cierre automático de chats, en caso de que el cliente tarde mucho en contestar</li>
-            <li>Plantillas de respuesta rápida y menú de autoservicio</li>
-            <li>Infocard del Cliente con campos customizables</li>
-            <li>Alarmas de deslogeo cuando se tienen chats abiertos</li>
-            <li>Estadísticas e informes</li>
-            <li>API para integrar con otros sistemas (CRM, ERP, otros)</li>
-            <li>Mecanismo de script incorporado para personalización avanzada</li>
-            <li>Mecanismo de calificación y votación</li>
-            <li>Botones de chat intelectuales</li>
-            <li>Embudos de venta automáticos</li>
-        </ul>
 
-        <h3 class="subtitulo">Características Chat2desk</h3>
-        <ul  class="bullet_red">
-            <li>DashBoard y Reportes Estadísticos</li>
-            <li>Roles Usuarios</li>
-            <li>Etiquetas de clientes</li>
-            <li>Horarios de Servicio</li>
-            <li>Notificaciones de Agente</li>
-            <li>Grupos de ACD y Skills por Agente</li>
-            <li>Funcionalidad de “Contactar Primero”</li>
-            <li>Envíos Masivos a tus clientes recurrentes</li>
-            <li>Widget para Portal Web</li>
-            <li>Menú de Auto-Servicio</li>
-            <li>Encuestas de Satisfacción</li>
-            <li>Listas Negras</li>
-            <li>Tracking del URL del Cliente</li>
-        </ul>
+            <h3 class="subtitulo">Mensajer&iacute;as Instant&aacute;neas de Pago</h3>
 
-        <h3 class="subtitulo">Reportes Estadisticos</h3>
-        <p>Los reportes estadísticas son un conjunto de datos con mas valores para analizar el rendimiento de su centro unificado de mensajerías instantáneas, como tiempo de procesamiento y reacción, cantidad de mensajes, clientes y solicitudes, acciones de los operadores, Puntuaciones recibidas y más.</p>
+            <p>Hay ciertos canales de mensajer&iacute;a instant&aacute;nea que tiene un costo por transaccionabilidad de
+                mensajes, cada mensajer&iacute;a maneja diferentes modelos comerciales ya sea por mensajes
+                intercambiados, contactos o sesiones, estos canales son WhatsApp Business API, Viber Business, Skype y
+                SMS</p>
 
-        <ul class="bullet_red">
-            <li>Las estadísticas se calculan una vez al día a la 1 am, hora local. El cálculo está desactivado por defecto</li>
-            <li>Solicite al administrador que lo active para su empresa.</li>
-            <li>La mayoría de los valores se calculan en base a la solicitud/requisición</li>
-        </ul>
+            <center><img alt="404" src="https://chat2desk.mx/wp-content/uploads/2021/10/404-error-not-found-1.png"
+                    style="width: 460px; height: 400px;" /></center>
 
-        <p>Solicitud/requisición - es un conjunto de mensajes dentro de un diálogo con un cliente. Como regla general, la solicitud comienza con el primer mensaje del cliente y finaliza cuando el diálogo está cerrado. En caso de que el cliente vuelva a escribir cuando el dialogo ya se cerro, el sistema iniciara una nueva solicitud.</p>
-        <ul class="bullet_red">
-            <li>Para activar la visualización de solicitudes en sus chats, se puede hacer en Ajustes & Configuración / Etiquetas y Solicitudes, solo el administración puede habilitar esa funcionalidad.</li>
-            <li>Solicite al administrador que lo active para su empresa.</li>
-            <li>El período de tiempo siempre se calcula en segundos.</li>
-        </ul>
+            <h3 class="subtitulo">Caracter&iacute;sticas de Chat2desk</h3>
 
-        <p>En la opción de Dashboard / Reportes Generales, podrá encontrar los siuguientes reportes:</p>
-        <ul class="bullet_red">
-            <li>Reporte de Mensajes y Clientes por día</li>
-                <center>
+            <center><img alt="404" src="https://chat2desk.mx/wp-content/uploads/2021/10/404-error-not-found-1.png"
+                    style="width: 460px; height: 400px;" /></center>
+
+            <h3 class="subtitulo">Funcionalidades Chat2desk</h3>
+
+            <ul class="bullet_red">
+                <li>Hasta 500 agentes para comunicaciones simult&aacute;neas con clientes.</li>
+                <li>Aplicaci&oacute;n m&oacute;vil para agentes y administrador.</li>
+                <li>Consola Central Web como interface de atenci&oacute;n para Operador y Supervisor</li>
+                <li>Compatible con los principales Browsers (Chrome, Firefox, Edge, Opera, etc)</li>
+                <li>Definici&oacute;n de horarios de operaci&oacute;n de Chat center</li>
+                <li>Modos de Operaci&oacute;n del Chat Center</li>
+                <li>Auto-respuestas como mensajes de bienvenida a clientes nuevos y clientes recurrentes con base a los
+                    horarios de operaci&oacute;n.Auto-respuestas como mensajes de bienvenida a clientes nuevos y
+                    clientes recurrentes con base a los horarios de operaci&oacute;n.</li>
+                <li>Manejo de variables para identificar el nombre del cliente y el saludo</li>
+                <li>Notificaciones en Consola Web
+                    <ul class="bullet_black">
+                        <li>De Audio, cuando un cliente nuevo te contacta, o recibes un mensaje o recibes una
+                            transferencia de un chat</li>
+                        <li>Marquesina de texto en el t&iacute;tulo de la venta del browser</li>
+                        <li>En barra de tareas.</li>
+                    </ul>
+                </li>
+                <li>Transferencia de Chats a operadores o grupo de operadores.</li>
+                <li>Broadcasting a grupo de telegram para tener acceso de monitoreo a los mensajes que procesa tu cuenta
+                </li>
+                <li>Estatus de Operadores</li>
+                <li>Asignaci&oacute;n autom&aacute;tica de chats a los operadores en l&iacute;nea</li>
+                <li>Notificaciones de tiempo de respuesta elevado</li>
+                <li>Cierre autom&aacute;tico de chats, en caso de que el cliente tarde mucho en contestar</li>
+                <li>Plantillas de respuesta r&aacute;pida y men&uacute; de autoservicio</li>
+                <li>Infocard del Cliente con campos customizables</li>
+                <li>Alarmas de deslogeo cuando se tienen chats abiertos</li>
+                <li>Estad&iacute;sticas e informes</li>
+                <li>API para integrar con otros sistemas (CRM, ERP, otros)</li>
+                <li>Mecanismo de script incorporado para personalizaci&oacute;n avanzada</li>
+                <li>Mecanismo de calificaci&oacute;n y votaci&oacute;n</li>
+                <li>Botones de chat intelectuales</li>
+                <li>Embudos de venta autom&aacute;ticos</li>
+            </ul>
+
+            <h3 class="subtitulo">Caracter&iacute;sticas Chat2desk</h3>
+
+            <ul class="bullet_red">
+                <li>DashBoard y Reportes Estad&iacute;sticos</li>
+                <li>Roles Usuarios</li>
+                <li>Etiquetas de clientes</li>
+                <li>Horarios de Servicio</li>
+                <li>Notificaciones de Agente</li>
+                <li>Grupos de ACD y Skills por Agente</li>
+                <li>Funcionalidad de &ldquo;Contactar Primero&rdquo;</li>
+                <li>Env&iacute;os Masivos a tus clientes recurrentes</li>
+                <li>Widget para Portal Web</li>
+                <li>Men&uacute; de Auto-Servicio</li>
+                <li>Encuestas de Satisfacci&oacute;n</li>
+                <li>Listas Negras</li>
+                <li>Tracking del URL del Cliente</li>
+            </ul>
+
+            <h3 class="subtitulo">Reportes Estadisticos</h3>
+
+            <p>Los reportes estad&iacute;sticas son un conjunto de datos con mas valores para analizar el rendimiento de
+                su centro unificado de mensajer&iacute;as instant&aacute;neas, como tiempo de procesamiento y
+                reacci&oacute;n, cantidad de mensajes, clientes y solicitudes, acciones de los operadores, Puntuaciones
+                recibidas y m&aacute;s.</p>
+
+            <ul class="bullet_red">
+                <li>Las estad&iacute;sticas se calculan una vez al d&iacute;a a la 1 am, hora local. El c&aacute;lculo
+                    est&aacute; desactivado por defecto</li>
+                <li>Solicite al administrador que lo active para su empresa.</li>
+                <li>La mayor&iacute;a de los valores se calculan en base a la solicitud/requisici&oacute;n</li>
+            </ul>
+
+            <p>Solicitud/requisici&oacute;n - es un conjunto de mensajes dentro de un di&aacute;logo con un cliente.
+                Como regla general, la solicitud comienza con el primer mensaje del cliente y finaliza cuando el
+                di&aacute;logo est&aacute; cerrado. En caso de que el cliente vuelva a escribir cuando el dialogo ya se
+                cerro, el sistema iniciara una nueva solicitud.</p>
+
+            <ul class="bullet_red">
+                <li>Para activar la visualizaci&oacute;n de solicitudes en sus chats, se puede hacer en Ajustes &amp;
+                    Configuraci&oacute;n / Etiquetas y Solicitudes, solo el administraci&oacute;n puede habilitar esa
+                    funcionalidad.</li>
+                <li>Solicite al administrador que lo active para su empresa.</li>
+                <li>El per&iacute;odo de tiempo siempre se calcula en segundos.</li>
+            </ul>
+
+            <p>En la opci&oacute;n de Dashboard / Reportes Generales, podr&aacute; encontrar los siuguientes reportes:
+            </p>
+
+            <center><img alt="404" src="https://chat2desk.mx/wp-content/uploads/2021/10/404-error-not-found-1.png"
+                    style="width: 460px; height: 400px;" /></center>
+
+            <center><img alt="404" src="https://chat2desk.mx/wp-content/uploads/2021/10/404-error-not-found-1.png"
+                    style="width: 460px; height: 400px;" /></center>
+
+            <center><img alt="404" src="https://chat2desk.mx/wp-content/uploads/2021/10/404-error-not-found-1.png"
+                    style="width: 460px; height: 400px;" /></center>
+
+            <ul class="bullet_red">
+                <li>Reporte de Mensajes y Clientes por d&iacute;a</li>
+                <li>Actividad de los Operadores</li>
+                <li>Trafico por Mensajeria</li>
+            </ul>
+
+            <p>En la opci&oacute;n de Dashboard / Reportes Graficos, ponemos a su disposici&oacute;n reportes graficos
+                basados en las estadisticas disponibles hay una variedad gr&aacute;ficos basados en estas
+                estad&iacute;sticas disponibles, como:</p>
+
+            <ul class="bullet_red">
+                <li>Eventos de los Operadores</li>
+                <li>Nuevos Clients &amp; Solicitudes</li>
+                <li>Nuevos Clients &amp; Solicitudes sin ChatOnLine</li>
+                <li>Solicitudes &amp; Clientes por Operador</li>
+                <li>Traffico por canal de mensajer&iacute;a</li>
+                <li>Calificaciones de Calidad &amp; Trabajo/li&gt;</li>
+                <li>Total de Trafico por d&iacute;a</li>
+                <li>Mensajes por Operador</li>
+                <li>Reacci&oacute;n y Respuesta</li>
+                <li>Reacci&oacute;n y Respuesta &ndash; Modo de Trabajo EnLinea</li>
+                <li>Carga de Trabajo &ndash; Respuestas</li>
+                <li>Carga de Trabajo Chat</li>
+                <li>Clientes por Periodo</li>
+                <li>Listado de Clientes &ndash; sin ChatOnLine</li>
+                <li>Calificaci&oacute;n Promedio por Operador</li>
+                <li>Tiempo EnLinea por Operador</li>
+                <li>Calificaci&oacute;n Promedio por d&iacute;a</li>
+                <li>Chats con Baja Calificiaci&oacute;n</li>
+                <li>Chats con Alta Calificaci&oacute;n</li>
+                <li>Estatus de Viber Business</li>
+                <li>Trafico por Canales/li&gt;</li>
+                <li>Trafico compartido por Menu</li>
+            </ul>
+
+            <h3 class="subtitulo">Perfiles de Usuario</h3>
+
+            <p>Hay 3 roles que se pueden manejar dentro de la plataforma chat2desk:</p>
+
+            <ul class="bullet_red">
+                <li>Administrador</li>
+                <li>Supervisor</li>
+                <li>Operador</li>
+            </ul>
+
+            <p>Las diferencias entre ellos se describen en la hoja de datos a continuaci&oacute;n.</p>
+            <table id="t_diferencias">
+                <thead>
+                    <tr>
+                        <td></td>
+                        <td>Administrador</td>
+                        <td>Supervisor</td>
+                        <td>Operador</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Manejo de Chats</td>
+                        <td>Si</td>
+                        <td>Si</td>
+                        <td>Si</td>
+                    </tr>
+                    <tr>
+                        <td>Asignar nuevos chats a un Operador</td>
+                        <td>Si</td>
+                        <td>Si</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>Transferencia de chats de un operador a otro
+                            *solo si el administrador lo permite</td>
+                        <td>Si</td>
+                        <td>Si</td>
+                        <td>Si</td>
+                    </tr>
+                    <tr>
+                        <td>Acceso al Dashboard y Reportes</td>
+                        <td>Si</td>
+                        <td>Si</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>Puede responder chats asignados a otro operador</td>
+                        <td>Si</td>
+                        <td>Si</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>Acceso a la Información de Operador</td>
+                        <td>Si</td>
+                        <td>Si</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>Agregar/Borrar/Editar Operadores y Supervisores, así como su información</td>
+                        <td>Si</td>
+                        <td>No</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>Cambiar el Modo del Centro de Chat (online/offline)</td>
+                        <td>Si</td>
+                        <td>Si</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>Acceso a los Ajustes & Configuración del Servicio</td>
+                        <td>Si</td>
+                        <td>No</td>
+                        <td>No</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>
+                Adicionalmente puede acceder a configuraciones avanzadas para supervisores y operadores dentro de la
+                opción Ajustes & Configuración->Privilegios
+            </p>
+
+            <h3 class="subtitulo">Gestión de Operadores y Grupos</h3>
+            <p>Puedes administrar a los usuarios que acceden a tu cuenta y definir lo roles asignación de privilegios
+                dentro de la plataforma. De igual forma puedes definir las habilidades de cada Operador y asignarlos a
+                grupos de atención especializada.</p>
+            <center>
+                <img alt="404" src="https://chat2desk.mx/wp-content/uploads/2021/10/404-error-not-found-1.png"
+                    style="width: 460px; height: 400px;" />
+            </center>
+            <p>También puedes visualizar el estatus de tus agentes, las sesiones de chat abiertas, calificación promedio
+                del agente con base a las evaluaciones de calidad, acceso a sección de Nuevos Chats.</p>
+            <h3 class="subtitulo">Filtros en Chats</h3>
+            <p>Puedes crear conjunto de filtros personales para tus Chats, en el menú de a izquierda para un rápido
+                acceso. Por ejemplo, puedes crear estos filtros de chats:</p>
+            <div class="row">
+                <div class="column">
                     <img alt="404" src="https://chat2desk.mx/wp-content/uploads/2021/10/404-error-not-found-1.png"
-                        style="width: 460px; height: 400px;" />
-                </center>
-            <li>Actividad de los Operadores</li>
-                <center>
-                    <img alt="404" src="https://chat2desk.mx/wp-content/uploads/2021/10/404-error-not-found-1.png"
-                        style="width: 460px; height: 400px;" />
-                </center>
-            <li>Trafico por Mensajeria</li>
-                <center>
-                    <img alt="404" src="https://chat2desk.mx/wp-content/uploads/2021/10/404-error-not-found-1.png"
-                        style="width: 460px; height: 400px;" />
-                </center>
-        </ul>
-        <p>En la opción de Dashboard / Reportes Graficos, ponemos a su disposición reportes graficos basados en las estadisticas disponibles hay una variedad gráficos basados en estas estadísticas disponibles, como:</p>
-        <ul  class="bullet_red">
-            <li>Eventos de los Operadores</li>
-            <li>Nuevos Clients & Solicitudes</li>
-            <li>Nuevos Clients & Solicitudes sin ChatOnLine</li>
-            <li>Solicitudes & Clientes por Operador</li>
-            <li>Traffico por canal de mensajería</li>
-            <li>Calificaciones de Calidad & Trabajo/li>
-            <li>Total de Trafico por día</li>
-            <li>Mensajes por Operador</li>
-            <li>Reacción y Respuesta</li>
-            <li>Reacción y Respuesta – Modo de Trabajo EnLinea</li>
-            <li>Carga de Trabajo – Respuestas</li>
-            <li>Carga de Trabajo Chat</li>
-            <li>Clientes por Periodo</li>
-            <li>Listado de Clientes – sin ChatOnLine</li>
-            <li>Calificación Promedio por Operador</li>
-            <li>Tiempo EnLinea por Operador</li>
-            <li>Calificación Promedio por día</li>
-            <li>Chats con Baja Calificiación</li>
-            <li>Chats con Alta Calificación</li>
-            <li>Estatus de Viber Business</li>
-            <li>Trafico por Canales/li>
-            <li>Trafico compartido por Menu</li>
-        </ul>
-        
-        <h3 class="subtitulo">Perfiles de Usuario</h3>
-        <p>Hay 3 roles que se pueden manejar dentro de la plataforma chat2desk:</p>
-        <ul  class="bullet_red">
-            <li>Administrador</li>
-            <li>Supervisor</li>
-            <li>Operador</li>
-        </ul>
-        <p>Las diferencias entre ellos se describen en la hoja de datos a continuación. </p>
+                        style="width: 260px; height: 200px;" />
+                </div>
+                <div class="column">
+                    <ul class="bullet_red">
+                        <li>Chats vencidos por operador o por grupos de operadores</li>
+                        <li>Chats por tipo de mensajería por país</li>
+                        <li>Chats con ciertas etiquetas (tags)</li>
+                        <li>Chat con ciertos clientes VIP</li>
+                    </ul>
+                    <p>Cuando un conjunto es seleccionado, de inmediato los chats que cumplen con ese criterio son
+                        seleccionados. Si el conjunto esta vacío significa que no tiene chats. Dicha funcionalidad se
+                        torna semitransparente para evitar distractores. El número de chats en cada conjunto se
+                        recalcula automáticamente cuando se actualízala página o cuando selecciona un conjunto. Así
+                        tendrás la capacidad de checar chats interesantes de forma rápida.</p>
+                </div>
+                <div class="column"></div>
+            </div>
 
+            <h3 class="subtitulo">Chat en Vivo & Widget</h3>
+            <div class="row">
+                <div class="column">
+                    <ul class="bullet_red">
+                        <li>Chats vencidos por operador o por grupos de operadores</li>
+                        <li>Chats por tipo de mensajería por país</li>
+                        <li>Chats con ciertas etiquetas (tags)</li>
+                        <li>Chat con ciertos clientes VIP</li>
+                    </ul>
+                    <p>Cuando un conjunto es seleccionado, de inmediato los chats que cumplen con ese criterio son
+                        seleccionados. Si el conjunto esta vacío significa que no tiene chats. Dicha funcionalidad se
+                        torna semitransparente para evitar distractores. El número de chats en cada conjunto se
+                        recalcula automáticamente cuando se actualízala página o cuando selecciona un conjunto. Así
+                        tendrás la capacidad de checar chats interesantes de forma rápida.</p>
+                </div>
+                <div class="column">
+                    <img alt="404" src="https://chat2desk.mx/wp-content/uploads/2021/10/404-error-not-found-1.png"
+                        style="width: 260px; height: 200px;" />
+                </div>
+            </div>
+            <h3 class="subtitulo">Plantillas Predefinidas</h3>
+            <p>Crea de forma sencilla plantillas con la finalidad de acelerar la respuesta por parte de los agentes.
+                Estas pueden ser creadas de forma personalizable hacia el cliente, ya sea con texto, imágenes o PDF, de
+                igual forma dichas plantillas pueden ser categorizadas para una más fácil administración.</p>
+            <h3 class="subtitulo">Plantillas Predefinidas</h3>
+            <p>Las etiquetas (Tags) son ampliamente utilizadas en el sistema. Además de las marcas visuales para los
+                operadores, permiten filtrar a los clientes, ver estadísticas sobre solicitudes de diferentes temas,
+                restringir el envío de ofertas para calificar para chatear, configurar cadenas de mensajes y mucho más.
+            </p>
+            <p>Además, es posible ejecutar un programa o script específico cuando se aplica o elimina una etiqueta de
+                cliente. Puede realizar operaciones masivas con etiquetas utilizando mensajes masivos y operaciones
+                masivas. Las etiquetas se pueden aplicar tanto a los clientes como a sus solicitudes.</p>
+            <p>Dentro de esta opción Clientes y solicitudes puedes ser etiquetados. Una solicitud es una parte del
+                dialogo de chat con el cliente la cual puede contener mucho intercambio de mensajes, usualmente la
+                solicitud es iniciada por el cliente y termina cuando el chat es cerrado. Si la comunicación continua
+                después de que el dialogo es cerrado entonces se iniciara una nueva solicitud en el mismo dialogo.</p>
+            <p>Las etiquetas y grupo de etiquetas son administradas en el menú de “Ajustes & Configuración”</p>
+
+            <h3 class="subtitulo">Macros</h3>
+            <p>Las Macros permiten automatizar muchas acciones en los chats, lo que Ayuda a los operadores a trabajar
+                mucho más rápido. Aquí te presentamos un listado de los posibles usos de las Macros:</p>
+            <ul class="bullet_red">
+                <li>Envió de contenido de plantilla al Nuevo</li>
+                <li>Actualice algún campo o comentario en la tarjeta de información del cliente (infocard) Nuevo</li>
+                <li>Deje comentarios internos en el chat Nuevo</li>
+                <li>Marcar chats como no leídos Nuevo</li>
+                <li>Cerrado de Chats Nuevo</li>
+                <li>Transferencia de chat a un operador o grupo de operadores y deja comentarios internos</li>
+                <li>Agrega o Borra Etiquetas al Cliente o a la Solicitud Nuevo</li>
+                <li>Ejecuta solicitudes POST-http y abre la página web resultante</li>
+                <li>Ejecuta Scripts de Python y abre la página web resultante.</li>
+            </ul>
+
+            <h3 class="subtitulo">Menú de Autoservicio</h3>
+            <p>Es un set de comandos con el cliente interactúa como si estuviera en un IVR pero en chat. Esta
+                funcionalidad ayuda al operador a tener una mejor percepción de lo que el cliente quiere. Hay ciertos
+                canales de mensajería instantánea que soportan el manejo de botones como Facebook Messenger, Viber
+                Public, Telegram y el Chat en Línea. El menú es visualizado en forma de botones</p>
+            <center>
+                <img alt="404" src="https://chat2desk.mx/wp-content/uploads/2021/10/404-error-not-found-1.png"
+                    style="width: 260px; height: 200px;" />
+            </center>
+            <center>
+                <img alt="404" src="https://chat2desk.mx/wp-content/uploads/2021/10/404-error-not-found-1.png"
+                    style="width: 260px; height: 200px;" />
+            </center>
+            <center>
+                <img alt="404" src="https://chat2desk.mx/wp-content/uploads/2021/10/404-error-not-found-1.png"
+                    style="width: 260px; height: 200px;" />
+            </center>
+
+
+            <h3 class="subtitulo">Menú de Autoservicio</h3>
+            <p>El bot de chat responde automáticamente a los clientes en lugar de a los operadores, asigna etiquetas o
+                asigna el chat a un operador específico o a un grupo de atención especializada. ChatB0ot analiza todos
+                los mensajes entrantes y actúa de acuerdo con las palabras clave identificadas.</p>
+            <p>Crea un set y dentro de cada set puede haber al menos un grupo de palabras clave, puedes crear tantos
+                grupos como tu set lo requiera. Una respuesta especifica es contestada al cliente solo si en el mensaje
+                del cliente contiene al menos una palabra de cada grupo y no contiene ninguna palabra de paro.</p>
+            <center>
+                <img alt="404" src="https://chat2desk.mx/wp-content/uploads/2021/10/404-error-not-found-1.png"
+                    style="width: 260px; height: 200px;" />
+            </center>
+            <p> Puedes crear los sets de preguntas que operación requiera, no hay una limitante tecnológica</p>
+
+            <h3 class="subtitulo">SDK en Chat2desk</h3>
+            <h4 class="subtitulo">API</h4>
+            <p>API (Interfaz de programación de aplicaciones) permite operar las funciones de Chat2Desk desde sistemas
+                externos.</p>
+            <center>
+                <img alt="404" src="https://chat2desk.mx/wp-content/uploads/2021/10/404-error-not-found-1.png"
+                    style="width: 260px; height: 200px;" />
+            </center>
+            <p> Esta sección muestra toda la información esencial para la configuración de la API, como: API-token,
+                número de solicitudes de API disponibles y reales durante el mes.</p>
+            <p>El API tiene una arquitectura RESTful y usa métodos GET, PUT, DELETE y POST, la información de regreso es
+                presentada en connotación JSON, nuestra API maneja protocolo seguro https</p>
+
+            <h3 class="subtitulo">Encuestas de Calidad </h3>
+            <p>La calidad de la atención del Operador puede ser evaluada por los clientes. Una vez que el chat es
+                cerrado, se envía una invitación al cliente para evaluar el chat. Como resultado de la encuesta se puede
+                obtener la calificación del Operador o del Chat Center</p>
+
+            <h3 class="subtitulo">Encuestas de Calidad </h3>
+            <p>Podra establecer una lista de direcciones IP autorizadas para iniciar sesión en el sitio web. También
+                puede definir qué características están disponibles para los operadores y los supervisores; y restringir
+                el limite el acceso a la aplicación móvil (Telegram bot) para los operadores y supervisores; así como
+                activar un filtro de contenido de envío / recepción.</p>
+
+            <h3 class="subtitulo">Encuestas de Calidad </h3>
+            <p>El uso de scripts de Python permite implementar configuraciones avanzadas, como las siguientes.</p>
+            <div class="row">
+                <div class="column">
+                    <ul class="bullet_red">
+                        <li>Asignar un chat a un operador para que cada operador no tenga más de X chats abiertos.</li>
+                        <li>Informar al supervisor sobre los chats que no se han respondido durante mucho tiempo.</li>
+                        <li>Enviar una tarjeta de visita digital a través de WhatsApp después de que un cliente llamara
+                            a su empresa.</li>
+                        <li>Selección automática de mensajes para ocultar los números de tarjeta de crédito del cliente
+                            y otra información confidencial de los operadores</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <img alt="404" src="https://chat2desk.mx/wp-content/uploads/2021/10/404-error-not-found-1.png"
+                        style="width: 260px; height: 200px;" />
+                </div>
+                <div class="column"></div>
+            </div>
+
+            <h3 class="subtitulo">Listas Negras</h3>
+            <p>Esta funcionalidad permite banear a clientes indeseables. Se puede configurar un mensaje notificando al
+                usuario que está bloqueado</p>
+
+            <h3 class="subtitulo">URL Tracking</h3>
+            <p>La función de seguimiento de URL permite rastrear qué URL se utilizó para iniciar el widget y para
+                contactarlo. Esta información es útil para los vendedores que rastrean las fuentes de plomo.
+                El seguimiento de URL está disponible para todos los mensajeros: WhatsApp, Viber (cuentas personales,
+                públicas y empresariales), Telegram, Facebook, VK, chat en vivo, etc.
+            </p>
+
+            <h3 class="subtitulo">Envíos & Operaciones Masivas</h3>
+            <p>Chat2desk permite el envío de mensajes a tus clientes actuales. Puedes seleccionar a los clientes con base a las siguientes reglas</p>
+            <ul class="bullet_red">
+                <li>Etiquetas y mensajeros: los mensajes se enviarán a los clientes, cuyas tarjetas de información contienen etiquetas y mensajeros específicos.</li>
+                <li>Filtro del diálogo con base a fecha de inicio y fecha de término. Los mensajes se enviarán a los clientes, cuyos diálogos ocurrieron dentro de las fechas especificadas.</li>
+                <li>Cantidad límite: establezca el número de destinatarios. Escriba 0 para el número ilimitado de destinatarios.</li>
+                <li>Contabilización: esta sección permite calcular previamente el número de destinatarios.</li>
+                <li>Texto e imagen / PDF: especifique un texto, una imagen o un documento PDF para mensajes masivos</li>
+            </ul>
+
+            <h3 class="subtitulo">Módulo de Túneles & Bots</h3>
+            <p>Los túneles le permiten enviar mensajes a los clientes, respondiendo a sus preguntas y realizar diversas acciones dependiendo de la actividad o inactividad del cliente. Los túneles son activados por varios eventos, por ejemplo, cuando se accede a un nuevo cliente o cuando se le asigna una etiqueta.</p>
+            <h4 class="subtitulo">Alcance de los túneles.</h4>
+            <ul class="bullet_red">
+                <li>Creando cuestionarios. Puede interrogar a sus clientes, asignar etiquetas en función de sus respuestas o guardar respuestas en campos adicionales. De esta manera, puede segmentar a sus clientes y aplicar un enfoque diferente a cada uno de ellos</li>
+                <li>Mensajes de calentamiento. Envíe varios mensajes al cliente con información útil con un retraso para “calentar” al cliente; Finalmente envíe un enlace a su producto</li>
+                <li>Soporte técnico. Haga preguntas importantes para resolver problemas técnicos.</li>
+                <li>Cobros por PayPal o Mercado pago</li>
+            </ul>
+
+            <h3 class="subtitulo">Aplicación Movil</h3>
+            <p>Todas las características básicas del servicio Chat2Desk están disponibles en la aplicación móvil basada en el mensaje de Telegram:</p>
+            <ul class="bullet_red">
+                <li>Comunicación con los clientes y el uso de plantillas.</li>
+                <li>Notificaciones de nuevos mensajes</li>
+                <li>Acceso a la información del cliente.</li>
+                <li>Transferencia del chat a otro operador.</li>
+            </ul>
+        </div>
+
+        <div id="ecocistema">
+            <h2 class="titular">Ecosistema WhatsApp</h2>
+
+            <h3 class="subtitulo">WhatsApp Business</h3>
+            <p>WhatsApp Business es una aplicación de descarga gratuita disponible para Android y iPhone, que ha sido desarrollada especialmente para pequeñas y medianas empresas. WhatsApp Business facilita las interacciones con los clientes, ya que ofrece herramientas para automatizar, organizar y responder rápidamente a los mensajes. Está diseñada y funciona de forma similar a WhatsApp Messenger. Puedes usarla para seguir haciendo todas las cosas que ya haces como enviar mensajes y fotos.</p>
+            <p>Algunas de las funciones que tiene esta aplicación son:</p>
+            <ul class="bullet_red">
+                <li>Perfil de empresa para mostrar la información más importante, como tu dirección, correo electrónico y sitio web.</li>
+                <li>Estadísticas para ver cuántos mensajes se enviaron, se entregaron y se leyeron exitosamente.</li>
+                <li>Herramientas de mensajería para responder de forma rápida a tus clientes.</li>
+            </ul>
+
+            <h3 class="subtitulo">WhatsApp Business</h3>
+            <p>WhatsApp ha reforzado las reglas de bloqueo para envíos masivos y boletines. <br>   Lea las nuevas recomendaciones para usar opciones como «Contactar Cliente Nuevo» «Túneles de ventas».</p>
+            <ol class="bullet_num">
+                <li>La función «Contactar Cliente Nuevo» ya no está disponible durante el período de trial.</li>
+                <li>Ahora WhatsApp bloquea para 5 o más mensajes idénticos a nuevos clientes. Por lo tanto, es necesario comprender que, si envía mensajes idénticos a nuevos clientes en la versión de pago mensual del servicio, el número se bloqueará de inmediato. Nuestro servicio también se opone a los boletines de noticias para los nuevos clientes.</li>
+                <li>Al enviar a la base de clientes actual, también existe el riesgo de ser bloqueado si envía más de 20-30 mensajes idénticos al día.</li>
+                <li>Los riesgos se aplican a los túneles de ventas si envía más de 20 a 30 mensajes idénticos por día a través de la base actual de clientes.</li>
+                <li>Si la cuenta está muy activa, la cantidad de mensajes enviados válidos puede aumentar. Sin embargo, esto no elimina completamente el riesgo de ser bloqueado cuando se usa la función "Escribir primero" y "Túneles de ventas".</li>
+            </ol>
+            <p>Mantenga estas recomendaciones en mente e intente encontrar formas de alentar al cliente a que le escriba primero.</p>
+        </div>
     </div>
 </body>
 

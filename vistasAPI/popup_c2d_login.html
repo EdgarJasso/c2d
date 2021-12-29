@@ -97,7 +97,7 @@
                 dataType: 'json',
                 data: JSON.stringify({
                     email: $('#c2d_inputEmail_rp').val(),
-                    url_to_change_pwd: HostUrl
+                    url_to_change_pwd: HostUrl + "/password.php"
                 }),
                 success: function (response) {
                     if (response.status === 'success') {
